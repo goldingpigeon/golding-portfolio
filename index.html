@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>golding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+
+<!-- BACKGROUND BLOBS -->
+<div class="blob"></div>
+<div class="blob2"></div>
+
+<!-- NAVBAR -->
+<header class="glass-nav">
+    <div class="logo">golding's portfolio</div>
+
+    <nav>
+        <a href="#home">home</a>
+        <a href="#about">about me</a>
+        <a href="#skills">skills</a>
+        <a href="#pastworks">past works</a>
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div class="icons">
+        <img src="roblox.png" class="icon" onclick="window.open('https://www.roblox.com/users/3558327113/profile','_blank')">
+        <img src="discord.png" class="icon" onclick="window.open('https://discord.gg/dPDSKY5ekA','_blank')">
+        <img src="gmail.png" class="icon" onclick="window.location='mailto:goldingpigeon@gmail.com'">
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <h1 class="fade">golding's portfolio</h1>
+    <p class="typing"></p>
+</section>
+
+<!-- CONSOLE BOX -->
+<div id="terminalWrapper">
+    <div class="console-header">
+        <span>terminal</span>
+        <span class="console-close" onclick="closeTerminal()">×</span>
+    </div>
+
+    <div class="console-box fade delay-1">
+        <pre id="consoleMessages"></pre>
+    </div>
+</div>
+
+<!-- OPEN TERMINAL BUTTON -->
+<p id="openTerminal" onclick="openTerminal()">⟶ open terminal</p>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2 class="fade">about me</h2>
+
+    <div class="card fade delay-1">
+
+        <!-- ABOUT TERMINAL -->
+        <pre id="aboutTerminal"></pre>
+
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <h2 class="fade">skills</h2>
+
+    <div class="skills-grid fade delay-1">
+        <div class="skill">roblox lua</div>
+        <div class="skill">ui animations</div>
+        <div class="skill">combat systems</div>
+        <div class="skill">modules</div>
+        <div class="skill">datastore logic</div>
+        <div class="skill">remote events</div>
+    </div>
+</section>
+
+<!-- PAST WORKS -->
+<section id="pastworks" class="section">
+    <h2 class="fade">past works</h2>
+
+    <h3 class="category-title fade">untitled football game</h3>
+    <div class="video-grid fade delay-1">
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161329.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161329.mp4" muted></video>
+            <p class="video-name">football clip 1</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161415.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161415.mp4" muted></video>
+            <p class="video-name">football clip 2</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161440.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161440.mp4" muted></video>
+            <p class="video-name">football clip 3</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161513.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161513.mp4" muted></video>
+            <p class="video-name">football clip 4</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161556.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161556.mp4" muted></video>
+            <p class="video-name">football clip 5</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_161653.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_161653.mp4" muted></video>
+            <p class="video-name">football clip 6</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+    </div>
+
+    <h3 class="category-title fade">jjk</h3>
+    <div class="video-grid fade delay-1">
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_155212.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_155212.mp4" muted></video>
+            <p class="video-name">jjk clip 1</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_155318.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_155318.mp4" muted></video>
+            <p class="video-name">jjk clip 2</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_155709.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_155709.mp4" muted></video>
+            <p class="video-name">jjk clip 3</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+    </div>
+
+    <h3 class="category-title fade">sell a brainrot</h3>
+    <div class="video-grid fade delay-1">
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_162241.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_162241.mp4" muted></video>
+            <p class="video-name">brainrot clip 1</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="20250728-2021-56.0551526.mp4">
+            <video class="preview" src="20250728-2021-56.0551526.mp4" muted></video>
+            <p class="video-name">brainrot clip 2</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_161621.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_161621.mp4" muted></video>
+            <p class="video-name">brainrot clip 3</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-28_162141.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-28_162141.mp4" muted></video>
+            <p class="video-name">brainrot clip 4</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+    </div>
+
+    <h3 class="category-title fade">extras</h3>
+    <div class="video-grid fade delay-1">
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_135317.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_135317.mp4" muted></video>
+            <p class="video-name">extra clip 1</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_135412.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_135412.mp4" muted></video>
+            <p class="video-name">extra clip 2</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Screen_Recording_2025-07-29_135459.mp4">
+            <video class="preview" src="Screen_Recording_2025-07-29_135459.mp4" muted></video>
+            <p class="video-name">extra clip 3</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="20250729-1759-56.4373350.mp4">
+            <video class="preview" src="20250729-1759-56.4373350.mp4" muted></video>
+            <p class="video-name">extra clip 4</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="20250729-1806-32.1308808.mp4">
+            <video class="preview" src="20250729-1806-32.1308808.mp4" muted></video>
+            <p class="video-name">extra clip 5</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="20250729-2030-18.0745168.mp4">
+            <video class="preview" src="20250729-2030-18.0745168.mp4" muted></video>
+            <p class="video-name">extra clip 6</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="bandicam_2024-07-02_18-11-21-415.mp4">
+            <video class="preview" src="bandicam_2024-07-02_18-11-21-415.mp4" muted></video>
+            <p class="video-name">extra clip 7</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Recording_2025-04-11_202312_1.mp4">
+            <video class="preview" src="Recording_2025-04-11_202312_1.mp4" muted></video>
+            <p class="video-name">extra clip 8</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+        <div class="video-card" data-video="Recording_2025-04-12_212528_1.mp4">
+            <video class="preview" src="Recording_2025-04-12_212528_1.mp4" muted></video>
+            <p class="video-name">extra clip 9</p>
+            <button class="glass-btn red">out of stock</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2 class="fade">contact</h2>
+    <p class="fade delay-1">email: goldingpigeon@gmail.com</p>
+    <p class="fade delay-2"><strong>discord: goldingpigeon</strong></p>
+</section>
+
+<footer>
+    <p>© 2025 golding</p>
+</footer>
+
+<!-- VIDEO POPUP -->
+<div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <video id="modalVideo" controls></video>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
