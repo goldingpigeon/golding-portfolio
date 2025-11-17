@@ -5,8 +5,52 @@
     <title>golding</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- ======================== -->
+<!--  GREEN HACKER POPUP     -->
+<!-- ======================== -->
+
+<div id="stockPopup">
+    <div id="popupBox">
+
+        <span id="popupClose">×</span>
+
+        <h2>how to buy</h2>
+
+        <div class="popup-steps">
+            <p>1 — ask golding on discord or gmail</p>
+            <p>2 — wait from 1 to 5 days</p>
+            <p>3 — your package will be made only for YOU and not for anybody else.</p>
+            <p>4 — the price may vary, discuss with me and we will set a price together.</p>
+        </div>
+
+        <div class="popup-contact">
+
+            <div class="popup-btn" onclick="window.open('https://discord.com/channels/@me/949431948525334568','_blank')">
+                <img src="discord.png">
+                <span>contact on discord</span>
+            </div>
+
+            <div class="popup-btn" onclick="window.location='mailto:goldingpigeon@gmail.com'">
+                <img src="gmail.png">
+                <span>contact by gmail</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- HACKER INTRO -->
+<div id="introScreen">
+    <pre id="introText"></pre>
+</div>
+
 
 <body>
+
+    <audio id="sndClick" src="click.wav"></audio>
+<audio id="sndPopup" src="popup.wav"></audio>
+<audio id="sndType" src="typing.wav"></audio>
+
 
 <!-- BACKGROUND BLOBS -->
 <div class="blob"></div>
@@ -69,7 +113,6 @@
     <div class="skills-grid fade delay-1">
         <div class="skill">roblox lua</div>
         <div class="skill">ui animations</div>
-        <div class="skill">combat systems</div>
         <div class="skill">modules</div>
         <div class="skill">datastore logic</div>
         <div class="skill">remote events</div>
@@ -90,37 +133,43 @@
         <div class="video-card" data-video="https://files.catbox.moe/no686o.mp4">
             <video class="preview" src="https://files.catbox.moe/no686o.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 1</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/2ijhdg.mp4">
             <video class="preview" src="https://files.catbox.moe/2ijhdg.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 2</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/exyrq3.mp4">
             <video class="preview" src="https://files.catbox.moe/exyrq3.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 3</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/u26yon.mp4">
             <video class="preview" src="https://files.catbox.moe/u26yon.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 4</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/bxz4f3.mp4">
             <video class="preview" src="https://files.catbox.moe/bxz4f3.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 5</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy/button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/w28fik.mp4">
             <video class="preview" src="https://files.catbox.moe/w28fik.mp4" autoplay muted playsinline></video>
             <p class="video-name">football clip 6</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
     </div>
@@ -136,19 +185,22 @@
         <div class="video-card" data-video="https://files.catbox.moe/jjsmf5.mp4">
             <video class="preview" src="https://files.catbox.moe/jjsmf5.mp4" autoplay muted playsinline></video>
             <p class="video-name">jjk clip 1</p>
-            <button class="glass-btn red">out of stock</button>
+          <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/a8it7j.mp4">
             <video class="preview" src="https://files.catbox.moe/a8it7j.mp4" autoplay muted playsinline></video>
             <p class="video-name">jjk clip 2</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/kr84u7.mp4">
             <video class="preview" src="https://files.catbox.moe/kr84u7.mp4" autoplay muted playsinline></video>
             <p class="video-name">jjk clip 3</p>
-            <button class="glass-btn red">out of stock</button>
+          <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
     </div>
@@ -164,25 +216,29 @@
         <div class="video-card" data-video="https://files.catbox.moe/m70khb.mp4">
             <video class="preview" src="https://files.catbox.moe/m70khb.mp4" autoplay muted playsinline></video>
             <p class="video-name">brainrot clip 1</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/r7o5c9.mp4">
             <video class="preview" src="https://files.catbox.moe/r7o5c9.mp4" autoplay muted playsinline></video>
             <p class="video-name">brainrot clip 2</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/361z5q.mp4">
             <video class="preview" src="https://files.catbox.moe/361z5q.mp4" autoplay muted playsinline></video>
             <p class="video-name">brainrot clip 3</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/qk5ub9.mp4">
             <video class="preview" src="https://files.catbox.moe/qk5ub9.mp4" autoplay muted playsinline></video>
             <p class="video-name">brainrot clip 4</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
     </div>
@@ -198,55 +254,64 @@
         <div class="video-card" data-video="https://files.catbox.moe/047903.mp4">
             <video class="preview" src="https://files.catbox.moe/047903.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 1</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/scqaq3.mp4">
             <video class="preview" src="https://files.catbox.moe/scqaq3.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 2</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/vz07rm.mp4">
             <video class="preview" src="https://files.catbox.moe/vz07rm.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 3</p>
-            <button class="glass-btn red">out of stock</button>
+          <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/md8f69.mp4">
             <video class="preview" src="https://files.catbox.moe/md8f69.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 4</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/q0vlol.mp4">
             <video class="preview" src="https://files.catbox.moe/q0vlol.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 5</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/rzgaxl.mp4">
             <video class="preview" src="https://files.catbox.moe/rzgaxl.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 6</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/qmveqv.mp4">
             <video class="preview" src="https://files.catbox.moe/qmveqv.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 7</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/hxy12w.mp4">
             <video class="preview" src="https://files.catbox.moe/hxy12w.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 8</p>
-            <button class="glass-btn red">out of stock</button>
+           <button class="glass-btn green" onclick="openStockPopup()">buy</button>
+
         </div>
 
         <div class="video-card" data-video="https://files.catbox.moe/gnpafd.mp4">
             <video class="preview" src="https://files.catbox.moe/gnpafd.mp4" autoplay muted playsinline></video>
             <p class="video-name">extra clip 9</p>
-            <button class="glass-btn red">out of stock</button>
+            <button class="glass-btn green" onclick="openStockPopup()">buy/button>
+
         </div>
 
     </div>
@@ -275,5 +340,8 @@
 </div>
 
 <script src="script.js"></script>
+
+
 </body>
 </html>
+
