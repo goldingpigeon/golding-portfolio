@@ -2,6 +2,127 @@
    TERMINAL HEADER + CLOSE BUTTON
 ============================================================ */
 
+/* ==========================
+   HACKER POPUP WINDOW
+========================== */
+
+/* ================================
+   HACKER INTRO SCREEN
+================================ */
+
+#introScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #0aff0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    z-index: 9999;
+}
+
+#introText {
+    font-size: 1.3rem;
+    white-space: pre-wrap;
+    text-shadow: 0 0 12px #0aff0a;
+    padding: 20px;
+}
+
+.fadeOutIntro {
+    animation: fadeOutIntro 1.4s forwards;
+}
+
+@keyframes fadeOutIntro {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+#stockPopup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0,255,0,0.05);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+#popupBox {
+    width: 420px;
+    background: #000;
+    border: 2px solid #0aff0a;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0,255,0,0.4);
+    animation: popupFade .3s ease;
+    position: relative;
+    text-align: center;
+}
+
+@keyframes popupFade {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+#popupClose {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ff4040;
+    text-shadow: 0 0 8px red;
+}
+
+#popupClose:hover {
+    color: white;
+}
+
+.popup-steps p {
+    margin: 8px 0;
+    color: #0aff0a;
+    text-shadow: 0 0 8px #0aff0a;
+}
+
+.popup-contact {
+    margin-top: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.popup-btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #0aff0a;
+    padding: 10px;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 0 12px rgba(0,255,0,0.3);
+    transition: 0.2s;
+}
+
+.popup-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,255,0,0.6);
+}
+
+.popup-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+
 #terminalWrapper {
     width: 70%;
     max-width: 800px;
@@ -287,11 +408,13 @@ h2 {
     letter-spacing: 0.5px;
 }
 
-.glass-btn.red {
-    box-shadow: 0 0 12px rgba(255,0,0,0.15) inset;
-    border-color: rgba(255,0,0,0.25);
-    background: rgba(255,150,150,0.15);
+.glass-btn.green {
+    background: rgba(0,255,0,0.15) !important;
+    border-color: #0aff0a !important;
+    color: #0aff0a !important;
+    box-shadow: 0 0 15px rgba(0,255,0,0.3);
 }
+
 
 .glass-btn:hover {
     transform: scale(1.03);

@@ -192,6 +192,9 @@ modal.addEventListener("click", (e) => {
    ABOUT ME TERMINAL ANIMATION
 ============================================================ */
 
+/* ============================================================
+   ABOUT ME TERMINAL ANIMATION (RESTART ON VIEW)
+============================================================ */
 
 const aboutLines = [
     "im golding, a roblox scripter that can:",
@@ -258,3 +261,62 @@ const aboutObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 aboutObserver.observe(aboutTerminal);
+
+/* ==========================
+   OPEN STOCK POPUP
+========================== */
+
+function openStockPopup() {
+    document.getElementById("stockPopup").style.display = "flex";
+}
+
+document.getElementById("popupClose").onclick = () => {
+    document.getElementById("stockPopup").style.display = "none";
+};
+
+
+/* ============================================
+   INTRO ANIMATION (HACKER BOOT SEQUENCE)
+============================================ */
+
+const introLines = [
+    "> initializing golding.exe...",
+    "> loading modules...",
+    "> loading combat systems...",
+    "> loading vfx...",
+    "> loading ui logic...",
+    "> optimizing scripts...",
+    "> boot sequence complete.",
+    "> welcome user."
+];
+
+let introIndex = 0;
+let introChar = 0;
+let currentLine = "";
+
+function typeIntro() {
+    const introText = document.getElementById("introText");
+    const introScreen = document.getElementById("introScreen");
+
+    if (!introText) return;
+
+    if (introIndex < introLines.length) {
+        if (introChar < introLines[introIndex].length) {
+            introText.textContent += introLines[introIndex][introChar];
+            introChar++;
+            setTimeout(typeIntro, 40);
+        } else {
+            introText.textContent += "\n";
+            introIndex++;
+            introChar = 0;
+            setTimeout(typeIntro, 300);
+        }
+    } else {
+        setTimeout(() => {
+            introScreen.classList.add("fadeOutIntro");
+        }, 600);
+    }
+}
+
+window.addEventListener("load", typeIntro);
+
