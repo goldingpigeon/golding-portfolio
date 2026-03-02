@@ -73,8 +73,10 @@ const messages = [
     "> hope you're doing well today :)",
     "> you're very reliable & appreciated",
     "> remember to take breaks",
-    "> have a great day.",
-    "> end of transmission."
+    "> i hope my work will amaze you, they are all made with care and passion.",
+    "> there's discounts on my work, but don't rely too much on them :3, ",
+    "> bye! have a great day! :)",
+    "> end of transmission.",
 ];
 
 let consoleIndex = 0;
@@ -125,34 +127,83 @@ function openTerminal() {
    VIDEO HOVER PREVIEW + SAVE TIMESTAMP
 ============================================================ */
 
-let videoTimestamps = {}; // store timestamps individually
+/* ============================================================
+   VIDEO SYSTEM
+   - Fast page load
+   - Videos load in background after page loads
+   - Hover preview still works
+============================================================ */
 
-document.querySelectorAll(".video-card").forEach(card => {
+let videoTimestamps = {};
+
+const videoCards = document.querySelectorAll(".video-card");
+
+// Prepare videos (no loading at start)
+videoCards.forEach(card => {
     const video = card.querySelector(".preview");
-    const videoId = card.getAttribute("data-video");
+    const videoUrl = card.getAttribute("data-video");
 
-    // On hover → play from saved timestamp
+    if (!video) return;
+
+    // Store source but don't load yet
+    video.dataset.src = videoUrl;
+    video.preload = "none";
+    video.autoplay = false;
+
+    // Hover / touch play
     card.addEventListener("mouseenter", () => {
-        if (videoTimestamps[videoId] !== undefined) {
-            video.currentTime = videoTimestamps[videoId];
-        } else {
-            video.currentTime = 0;
+        if (!video.src) {
+            video.src = video.dataset.src;
+            video.load();
         }
 
-        video.play();
+        video.currentTime = videoTimestamps[videoUrl] || 0;
+        video.play().catch(() => {});
     });
 
-    // On leave → pause + save timestamp
     card.addEventListener("mouseleave", () => {
         video.pause();
-        videoTimestamps[videoId] = video.currentTime;
+        videoTimestamps[videoUrl] = video.currentTime;
+    });
+
+    // Touch devices (iPad / phone)
+    card.addEventListener("touchstart", () => {
+        if (!video.src) {
+            video.src = video.dataset.src;
+            video.load();
+        }
     });
 });
 
 
+/* ============================================================
+   BACKGROUND PRELOAD (after page loads)
+============================================================ */
+
+window.addEventListener("load", () => {
+
+    // Start preloading after a short delay (page already visible)
+    setTimeout(() => {
+
+        videoCards.forEach((card, index) => {
+            const video = card.querySelector(".preview");
+
+            // Faster stagger loading
+            setTimeout(() => {
+                if (!video.src) {
+                    video.src = video.dataset.src;
+                    video.preload = "metadata"; // loads preview only
+                    video.load();
+                }
+            }, index * 200); // 0.2s instead of 0.8s
+
+        });
+
+    }, 1500); // wait 1.5s after page load
+});
 
 /* ============================================================
-   VIDEO MODAL POPUP
+   VIDEO MODAL (kept from your original)
 ============================================================ */
 
 const modal = document.getElementById("videoModal");
@@ -167,10 +218,8 @@ document.querySelectorAll(".video-card").forEach(card => {
     card.addEventListener("click", () => {
         const videoFile = card.getAttribute("data-video");
 
-        // Load video into popup
         modalVideo.src = videoFile;
 
-        // Continue from hover timestamp
         if (videoTimestamps[videoFile] !== undefined) {
             modalVideo.currentTime = videoTimestamps[videoFile];
         }
@@ -180,7 +229,6 @@ document.querySelectorAll(".video-card").forEach(card => {
     });
 });
 
-// Close modal when clicking outside video
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         closeModal();
